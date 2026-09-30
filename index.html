@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="promo-bar" id="promoBar">
+    <span id="promoText">Free shipping over $50 · Order straight to WhatsApp</span>
+    <span class="offer-chip" id="offerChip" hidden>FIRST15 · 15% off + free shipping</span>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <button class="icon-btn" id="menuBtn" type="button" aria-label="Open menu" data-tour="menu">☰</button>
+    <a href="#" class="logo">FASHION</a>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchOpen" type="button" aria-label="Search" data-tour="search">⌕</button>
+      <button class="icon-btn" id="wishBtn" type="button" aria-label="Wishlist">♡ <span id="wishCount">0</span></button>
+      <button class="icon-btn cart-btn" id="cartBtn" type="button" aria-label="Open cart">Bag <span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <nav class="side-menu" id="sideMenu" aria-hidden="true">
+    <button class="icon-btn menu-close" id="menuClose" type="button" aria-label="Close menu">×</button>
+    <p class="menu-kicker" data-i18n="menuKicker">Maison</p>
+    <a href="#women" data-world="women" data-i18n="navWomen">Women</a>
+    <a href="#men" data-world="men" data-i18n="navMen">Men</a>
+    <a href="#products" data-category="accessories" data-i18n="navGifts">Gifts</a>
+    <a href="#deals" data-i18n="navDeals">Flash Deals</a>
+    <a href="#products" data-i18n="navCollection">Collection</a>
+    <a href="#stories" data-i18n="navStories">Stories</a>
+    <a href="#order" data-i18n="navOrder" data-open-checkout>Order</a>
+    <a href="#stores" data-i18n="navStores">Store Locator</a>
+    <a href="#client-service" data-i18n="navClientService">Client Service</a>
+    <a href="#about" data-i18n="navAbout">About Us</a>
+    <button type="button" class="menu-country" id="menuCountryBtn" data-i18n="navCountryLang">Country & Language</button>
+    <button type="button" class="menu-country" id="replayTourBtn" data-i18n="navReplayTour">Replay site guide</button>
+  </nav>
+  <div class="menu-overlay" id="menuOverlay" hidden></div>
+
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <button class="icon-btn search-close" id="searchClose" type="button" aria-label="Close search">×</button>
+    <form class="search-form overlay-search" id="searchForm" role="search">
+      <p data-i18n="searchPrompt">What are you looking for?</p>
+      <input type="search" id="searchInput" placeholder="Handbags, jackets, dresses..." data-i18n-placeholder="searchPlaceholder" autocomplete="off" autofocus>
+      <button type="submit" data-i18n="searchBtn">Search</button>
+    </form>
+  </div>
+
+  <!-- GUCCI-STYLE FIRST LANDING -->
+  <section class="campaign-hero" id="top">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=80" alt="Spring summer campaign">
+    </div>
+    <div class="hero-content">
+      <p class="hero-kicker" data-i18n="heroKicker">Spring Summer 2026</p>
+      <h1 data-i18n="heroTitle">Elevate Your Style</h1>
+      <p class="hero-sub" data-i18n="heroSub">Premium fashion made for you</p>
+      <div class="campaign-links">
+        <button type="button" data-world="women" data-i18n="shopWomen">Shop Women</button>
+        <button type="button" data-world="men" data-i18n="shopMen">Shop Men</button>
+        <a href="#stories" data-i18n="discoverCampaign">Discover the Campaign</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="campaign-split" id="worlds">
+    <button class="split-tile" type="button" data-world="women">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80" alt="Women campaign">
+      <span>
+        <em>Women</em>
+        Shop the look
+      </span>
+    </button>
+    <button class="split-tile" type="button" data-world="men">
+      <img src="https://images.unsplash.com/photo-1520975867597-0af37a22e31e?auto=format&fit=crop&w=1200&q=80" alt="Men campaign">
+      <span>
+        <em>Men</em>
+        Shop the look
+      </span>
+    </button>
+  </section>
+
+  <section class="featured-look" id="featured">
+    <div class="featured-image">
+      <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1400&q=80" alt="Crossbody Bag look">
+      <button type="button" class="look-hotspot" style="top:42%;left:48%" data-open-product="bag" aria-label="Shop Crossbody Bag">
+        <span></span>
+        <em>Bag</em>
+      </button>
+      <button type="button" class="look-hotspot" style="top:22%;left:68%" data-open-product="shades" aria-label="Shop Studio Sunglasses">
+        <span></span>
+        <em>Shades</em>
+      </button>
+      <button type="button" class="look-hotspot" style="top:70%;left:30%" data-open-product="dress" aria-label="Shop Silk Evening Dress">
+        <span></span>
+        <em>Dress</em>
+      </button>
+    </div>
+    <div class="featured-copy">
+      <p class="hero-kicker">See now, buy now</p>
+      <h2>Shop the Look</h2>
+      <p>A house classic restaged for the season. Structured leather, gold-tone hardware, and a silhouette made to move from day to night.</p>
+      <p class="featured-price"><strong>$22</strong> <span class="was">$45</span></p>
+      <div class="campaign-links">
+        <button type="button" data-open-product="bag" data-i18n="viewDetails">View details</button>
+        <button type="button" data-add="bag" data-i18n="addToBag">Add to bag</button>
+        <a href="#look-strip" data-i18n="shopTheLook">Shop the look</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="look-strip-section" id="look-strip">
+    <div class="section-head luxury-head">
+      <div>
+        <h2>Shop the Look</h2>
+        <p>Complete the featured edit in a few taps</p>
+      </div>
+    </div>
+    <div class="look-strip" id="lookStrip"></div>
+  </section>
+
+  <section class="stories" id="stories">
+    <div class="section-head luxury-head">
+      <div>
+        <h2>Stories</h2>
+        <p>Campaigns, craft, and the season in motion</p>
+      </div>
+    </div>
+    <div class="stories-grid">
+      <article class="story-card">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80" alt="Summer stories">
+        <div>
+          <h3>Summer Stories</h3>
+          <p>Light, escape, and clothes made for the long afternoon.</p>
+          <a href="#deals">Discover more</a>
+        </div>
+      </article>
+      <article class="story-card">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80" alt="Atelier craft">
+        <div>
+          <h3>The Atelier</h3>
+          <p>Cut, cloth, and the quiet work behind each drop.</p>
+          <a href="#products">Read more</a>
+        </div>
+      </article>
+      <article class="story-card">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="City edit">
+        <div>
+          <h3>City Edit</h3>
+          <p>Jackets, bags, and the pieces that travel with you.</p>
+          <a href="#products" data-category="jackets">Shop the edit</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MARKETPLACE SHOP (your Temu-style collection) -->
+  <section class="shop-toolbar" id="shop" data-tour="filters">
+    <nav class="category-nav" id="categoryNav" aria-label="Product categories">
+      <button class="chip active" data-category="all" type="button">All</button>
+      <button class="chip" data-category="hoodies" type="button">Hoodies</button>
+      <button class="chip" data-category="jackets" type="button">Jackets</button>
+      <button class="chip" data-category="bottoms" type="button">Bottoms</button>
+      <button class="chip" data-category="dresses" type="button">Dresses</button>
+      <button class="chip" data-category="shoes" type="button">Shoes</button>
+      <button class="chip" data-category="accessories" type="button">Accessories</button>
+    </nav>
+    <nav class="price-nav" id="priceNav" aria-label="Price filters">
+      <span class="price-nav-label">Price</span>
+      <button class="price-chip active" data-price="all" type="button">All</button>
+      <button class="price-chip" data-price="under20" type="button">Under $20</button>
+      <button class="price-chip" data-price="20to40" type="button">$20–$40</button>
+      <button class="price-chip" data-price="40plus" type="button">$40+</button>
+    </nav>
+  </section>
+
+  <section class="flash-deals" id="deals" data-tour="deals">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="dealsTitle">Flash Deals</h2>
+        <p data-i18n="dealsSub">Today's prices reset at midnight — new deals daily</p>
+      </div>
+      <div class="countdown countdown-pulse" id="countdown" aria-label="Deal countdown">
+        <span data-i18n="dealsEndsIn">Today's prices end in</span>
+        <strong id="hours">00</strong>:<strong id="minutes">00</strong>:<strong id="seconds">00</strong>
+      </div>
+    </div>
+    <div class="product-grid" id="dealGrid"></div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="collectionTitle">Our Collection</h2>
+        <p id="resultsLabel" data-i18n="collectionSub">Shop the full drop</p>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+    <p class="empty-state" id="emptyState" data-i18n="noResults" hidden>No products match your search.</p>
+  </section>
+
+  <!-- STORE LOCATOR -->
+  <section class="info-section" id="stores">
+    <div class="info-inner">
+      <p class="hero-kicker" data-i18n="boutiquesKicker">Boutiques</p>
+      <h2 data-i18n="storeLocatorTitle">Store Locator</h2>
+      <p class="info-lead" data-i18n="storeLocatorLead">Find a Fashion boutique near you. Book a private appointment or collect your WhatsApp order in store.</p>
+      <form class="store-search" id="storeSearchForm">
+        <input type="search" id="storeQuery" placeholder="Search by city or neighborhood" data-i18n-placeholder="storeSearchPlaceholder" autocomplete="off">
+        <button type="submit" data-i18n="searchBtn">Search</button>
+      </form>
+      <div class="store-grid" id="storeGrid"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <form class="newsletter" id="newsletterForm">
+      <h2 data-i18n="newsletterTitle">Join the maison</h2>
+      <p data-i18n="newsletterBody">Enjoy <strong>15% off + free shipping</strong> on your first order. Be first to the next drop.</p>
+      <div class="newsletter-row">
+        <input type="email" name="email" placeholder="Email address" data-i18n-placeholder="fieldEmail" required>
+        <button type="submit" data-i18n="newsletterSubmit">Sign up</button>
+      </div>
+    </form>
+
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h3>Store Locator</h3>
+        <ul>
+          <li><a href="#stores">Find a Boutique</a></li>
+          <li><button type="button" data-panel="stores">Appointments</button></li>
+          <li><button type="button" data-panel="stores">City Guides</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Client Service</h3>
+        <ul>
+          <li><button type="button" data-panel="client">Contact Us</button></li>
+          <li><button type="button" data-panel="client">Orders & Shipping</button></li>
+          <li><button type="button" data-panel="client">Returns & Exchanges</button></li>
+          <li><button type="button" data-open-checkout>WhatsApp Checkout</button></li>
+          <li><button type="button" data-panel="client">FAQs</button></li>
+          <li><button type="button" id="footerOpenChat">Live Chat</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>About Us</h3>
+        <ul>
+          <li><button type="button" data-panel="about">Our Maison</button></li>
+          <li><a href="#stories">Campaigns & Stories</a></li>
+          <li><button type="button" data-panel="about">Sustainability</button></li>
+          <li><button type="button" data-panel="about">Careers</button></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><button type="button" data-panel="legal">Privacy Policy</button></li>
+          <li><button type="button" data-panel="legal">Terms of Use</button></li>
+          <li><button type="button" data-panel="legal">Cookie Settings</button></li>
+          <li><button type="button" data-panel="legal">Accessibility</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <button type="button" class="country-trigger" id="countryTrigger" aria-haspopup="dialog" aria-label="Select country and language" data-tour="country">
+        <span id="countryCompact">NIGERIA — EN</span>
+        <span class="country-caret" aria-hidden="true">▾</span>
+      </button>
+      <p class="footer-meta">Fashion Store · WhatsApp checkout · Deals refresh daily</p>
+    </div>
+  </footer>
+
+  <!-- INFO PANELS -->
+  <div class="panel-overlay" id="panelOverlay" hidden></div>
+  <aside class="info-panel" id="infoPanel" aria-hidden="true" role="dialog" aria-labelledby="panelTitle">
+    <div class="panel-head">
+      <h2 id="panelTitle">Client Service</h2>
+      <button type="button" class="icon-close" id="closePanel" aria-label="Close">×</button>
+    </div>
+    <div class="panel-body" id="panelBody"></div>
+  </aside>
+
+  <!-- COUNTRY / LANGUAGE SELECTOR -->
+  <div class="country-overlay" id="countryOverlay" hidden></div>
+  <div class="country-modal" id="countryModal" role="dialog" aria-modal="true" aria-labelledby="countryModalTitle" hidden>
+    <div class="country-modal-head">
+      <div>
+        <p class="hero-kicker">Ship & Shop</p>
+        <h2 id="countryModalTitle">Select country and language</h2>
+      </div>
+      <button type="button" class="icon-close" id="closeCountry" aria-label="Close country selector">×</button>
+    </div>
+    <p class="country-modal-note">Prices, shipping, and client service follow your selected market.</p>
+    <div class="country-filters">
+      <input type="search" id="countryFilter" placeholder="Search country..." autocomplete="off">
+      <div class="lang-pills" id="langPills"></div>
+    </div>
+    <div class="country-list" id="countryList" role="listbox" aria-label="Countries"></div>
+  </div>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div class="pdp-overlay" id="pdpOverlay" hidden></div>
+  <aside class="pdp-modal" id="productModal" aria-hidden="true" role="dialog" aria-labelledby="pdpTitle">
+    <button type="button" class="icon-close pdp-close" id="pdpClose" aria-label="Close product details">×</button>
+    <div class="pdp-grid">
+      <div class="pdp-media">
+        <div class="img-flip" id="pdpFlip">
+          <div class="img-flip-inner">
+            <div class="img-flip-face img-flip-front">
+              <img id="pdpImage" src="" alt="">
+            </div>
+            <div class="img-flip-face img-flip-back">
+              <img id="pdpImageBack" src="" alt="">
+            </div>
+          </div>
+          <div class="flip-controls">
+            <button type="button" class="flip-chip active" data-pdp-face="front">Front</button>
+            <button type="button" class="flip-chip" data-pdp-face="back">Back</button>
+          </div>
+        </div>
+      </div>
+      <div class="pdp-info">
+        <p class="hero-kicker" id="pdpBadge"></p>
+        <h2 id="pdpTitle"></h2>
+        <div class="price-row pdp-price">
+          <span class="price" id="pdpPrice"></span>
+          <span class="was" id="pdpWas"></span>
+        </div>
+        <p class="meta" id="pdpMeta"></p>
+        <p class="pdp-desc" id="pdpDesc"></p>
+        <div class="pdp-sizes">
+          <p class="pdp-label">Size</p>
+          <div class="size-chips" id="pdpSizes"></div>
+        </div>
+        <div class="pdp-qty">
+          <p class="pdp-label">Qty</p>
+          <div class="qty">
+            <button type="button" id="pdpQtyMinus">−</button>
+            <span id="pdpQty">1</span>
+            <button type="button" id="pdpQtyPlus">+</button>
+          </div>
+        </div>
+        <div class="pdp-actions">
+          <button type="button" class="add-btn" id="pdpAdd" data-i18n="addToBag">Add to bag</button>
+          <a class="buy-btn" id="pdpBuy" href="#" target="_blank" rel="noopener" data-i18n="buyWhatsApp">Buy on WhatsApp</a>
+          <button type="button" class="wish-text-btn" id="pdpWish">Save</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- WHATSAPP ORDER MODAL -->
+  <div class="checkout-overlay" id="checkoutOverlay" hidden></div>
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" hidden>
+    <button type="button" class="icon-close" id="checkoutClose" aria-label="Close order form">×</button>
+    <div class="checkout-brand">
+      <span class="wa-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="56" height="56"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </span>
+      <h2 id="checkoutTitle" data-i18n="checkoutTitle">Order on WhatsApp</h2>
+    </div>
+    <form id="orderForm">
+      <input type="text" name="name" placeholder="Full Name" data-i18n-placeholder="fieldName" required>
+      <input type="text" name="address" placeholder="Address" data-i18n-placeholder="fieldAddress" required>
+      <input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="fieldPhone" required>
+      <button type="submit" class="checkout-submit">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-i18n="checkoutSubmit">Send on WhatsApp</span>
+      </button>
+    </form>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div class="signup-overlay" id="signupOverlay" hidden></div>
+  <div class="signup-modal" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="signupTitle" hidden>
+    <button type="button" class="icon-close" id="signupClose" aria-label="Close signup">×</button>
+    <p class="hero-kicker">Welcome offer</p>
+    <h2 id="signupTitle">Enjoy 15% off + free shipping</h2>
+    <p>On your first order. Sign up for drops, flash deals, and private WhatsApp checkout perks.</p>
+    <form id="signupForm">
+      <input type="text" name="name" placeholder="First name (optional)">
+      <input type="email" name="email" placeholder="Email address" required>
+      <button type="submit">Unlock FIRST15</button>
+    </form>
+    <button type="button" class="signup-skip" id="signupSkip">Maybe later</button>
+  </div>
+
+  <!-- SITE TOUR -->
+  <div class="tour-overlay" id="tourOverlay" hidden>
+    <div class="tour-card" id="tourCard">
+      <p class="hero-kicker">Site guide</p>
+      <h3 id="tourTitle">Welcome</h3>
+      <p id="tourText"></p>
+      <div class="tour-actions">
+        <button type="button" id="tourSkip">Skip</button>
+        <button type="button" class="tour-next" id="tourNext">Next</button>
+      </div>
+      <p class="tour-step" id="tourStep"></p>
+    </div>
+  </div>
+
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer-head">
+      <h2 id="drawerTitle">Your Bag</h2>
+      <button type="button" class="icon-close" id="closeCart" aria-label="Close">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot" id="cartFoot">
+      <p class="cart-total">Total: <strong id="cartTotal">$0</strong></p>
+      <button type="button" class="btn checkout-link" id="goCheckout" data-open-checkout>Checkout</button>
+    </div>
+  </aside>
+
+  <!-- LIVE CHAT + WHATSAPP -->
+  <div class="live-chat" id="liveChat" data-tour="chat">
+    <button type="button" class="wa-fab" id="waFab" aria-label="Chat on WhatsApp" data-open-checkout>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="wa-fab-label">Chat</span>
+    </button>
+    <button type="button" class="chat-launcher" id="chatLauncher" aria-expanded="false" aria-controls="chatWindow">
+      <span class="chat-launcher-icon" aria-hidden="true">💬</span>
+      <span class="chat-launcher-label">Live chat</span>
+      <span class="chat-pulse" aria-hidden="true"></span>
+    </button>
+
+    <section class="chat-window" id="chatWindow" aria-hidden="true" aria-label="Live chat with Fashion Client Service">
+      <header class="chat-header">
+        <div class="chat-agent">
+          <div class="chat-avatar" aria-hidden="true">F</div>
+          <div>
+            <strong>Fashion Client Service</strong>
+            <p><span class="chat-online"></span> Online · typically replies in under a minute</p>
+          </div>
+        </div>
+        <button type="button" class="icon-close chat-close" id="chatClose" aria-label="Close chat">×</button>
+      </header>
+
+      <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
+
+      <div class="chat-quick" id="chatQuick" aria-label="Quick replies">
+        <button type="button" data-quick="order">Track my order</button>
+        <button type="button" data-quick="size">Sizing help</button>
+        <button type="button" data-quick="store">Find a boutique</button>
+        <button type="button" data-quick="deal">Today’s deals</button>
+        <button type="button" data-quick="human">Talk to a human</button>
+      </div>
+
+      <form class="chat-compose" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Write a message..." autocomplete="off" maxlength="500" required>
+        <button type="submit" aria-label="Send message">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
