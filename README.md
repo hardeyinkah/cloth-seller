@@ -2,6 +2,8 @@
 
 An online fashion store with Women and Men collections, where customers place their orders through WhatsApp. Built for shoppers in Nigeria, with prices in naira.
 
+**Live site:** https://fashion-website-five-psi.vercel.app
+
 ## Features
 
 - **Women and Men collections** with product cards and prices in NGN
