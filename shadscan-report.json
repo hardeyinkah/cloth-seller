@@ -1,8 +1,0 @@
-npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
-{
-  "error": {
-    "code": "PROJECT_NOT_FOUND",
-    "message": "No package.json was found in this directory or its parents."
-  },
-  "schemaVersion": 1
-}
